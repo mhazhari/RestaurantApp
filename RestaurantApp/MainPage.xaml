@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource Primary}"
+             FlowDirection="LeftToRight">
+
+    <Grid RowDefinitions="1.5*, *, *">
+        <VerticalStackLayout Spacing="5" Margin="0, 50, 0, 0">
+            <Frame WidthRequest="100" HeightRequest="100"
+                   CornerRadius="100">
+                <Image Source="fork_spoon.png" Aspect="AspectFill"
+                       WidthRequest="50" HeightRequest="50"/>
+            </Frame>
+
+            <Label Text="Food Bank" TextColor="{StaticResource Secondary}"
+                   FontSize="32" HorizontalTextAlignment="Center"
+                   FontFamily="BeVietnamProExtraBold"/>
+            <Label Text="Special &amp; Delicious Food" TextColor="{StaticResource Tertiary}"
+                   FontSize="15" HorizontalTextAlignment="Center"
+                   FontFamily="BeVietnamProLight"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" Spacing="20">
+            <Button Text="Log In" BackgroundColor="{StaticResource Accent}"
+                    TextColor="{StaticResource Secondary}" WidthRequest="180"
+                    HeightRequest="50" CornerRadius="50"
+                    FontFamily="BeVietnamProBold" FontSize="18"/>
+
+            <Button Text="Sign Up"
+                    TextColor="{StaticResource Primary}" WidthRequest="180"
+                    HeightRequest="50" CornerRadius="50"
+                    FontFamily="BeVietnamProBold" FontSize="18">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource Secondary}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#a6a6a6"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+        </VerticalStackLayout>
+
+        <Frame Grid.Row="2" BackgroundColor="{StaticResource Accent}"
+               Padding="0" Margin="20, 0" HeightRequest="210" BorderColor="{StaticResource Accent}"
+               CornerRadius="20">
+            <Grid ColumnDefinitions="*, *">
+                <Path Aspect="UniformToFill" Grid.ColumnSpan="2" 
+                      Data="m159.35484,158.70968c0,0 0.64516,292.25806 0.64516,292.25806c0,0 506.45161,0 506.45161,0c19.35484,-5.16129 22.58065,-13.54838 22.58065,-13.54839c-306.45161,25.80645 -281.93548,-158.06451 -281.93548,-158.06452c2.58065,-57.41935 50.32258,-121.29032 50.32258,-121.29032c0,0 -298.06451,0.64516 -298.06451,0.64516z" 
+                     Fill="{StaticResource Accent}"/>
+
+                <Path ZIndex="-1" Aspect="UniformToFill" Grid.ColumnSpan="2" 
+                      Data="m159.35484,158.70968c0,0 -0.64516,292.25806 -0.64516,292.25806c0,0 509.03226,-0.64516 509.03226,-0.64516c32.90323,-10.96774 30.96774,-30.32258 30.96774,-30.32258c-280,23.87097 -273.54838,-124.51613 -273.54839,-124.51613c-1.29032,-71.6129 54.83871,-137.41935 54.83871,-137.41935c0,0 -320.64516,0.64516 -320.64516,0.64516z"
+                      Fill="{StaticResource Secondary}"/>
+
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="15%" TextColor="{StaticResource Secondary}"
+                           FontSize="55" FontFamily="BeVietnamProBlack" Margin="0, 0, 0, -15"/>
+
+                    <Label Text="Discount" TextColor="{StaticResource Secondary}"
+                           FontSize="30" FontFamily="BeVietnamProBold"/>
+
+                    <Label Text="From Our Store" TextColor="{StaticResource Secondary}"
+                           FontSize="18" FontFamily="BeVietnamProLight"/>
+                </VerticalStackLayout>
+
+                <Image ZIndex="-2" Grid.Column="1" Source="main_image.jpg" Aspect="AspectFill"/>
+            </Grid>
+        </Frame>
+    </Grid>
+
+</ContentPage>
